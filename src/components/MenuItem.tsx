@@ -20,9 +20,9 @@ export const MenuItem = ({ item, quantity, onAddToCart, onRemoveFromCart }: Menu
         isInCart ? 'ring-2 ring-primary shadow-card bg-gradient-card' : 'hover:bg-food-cream'
       }`}
     >
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1 min-w-0">
+      <div className="flex gap-4 p-6">
+        <div className="flex-1 min-w-0">
+          <CardHeader className="p-0 pb-3">
             <div className="flex items-center gap-2 mb-2">
               <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-smooth">
                 {item.name}
@@ -36,63 +36,63 @@ export const MenuItem = ({ item, quantity, onAddToCart, onRemoveFromCart }: Menu
             <CardDescription className="text-sm text-muted-foreground line-clamp-2">
               {item.description}
             </CardDescription>
-          </div>
+          </CardHeader>
           
-          {item.image && (
-            <div className="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-food-cream">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-full object-cover"
-              />
+          <CardContent className="p-0">
+            <div className="flex items-center justify-between">
+              <div className="text-2xl font-bold text-primary">
+                ${item.price.toFixed(2)}
+              </div>
+              
+              <div className="flex items-center gap-2">
+                {isInCart ? (
+                  <>
+                    <Button
+                      variant="cart-secondary"
+                      size="icon"
+                      onClick={onRemoveFromCart}
+                      className="h-8 w-8"
+                    >
+                      <Minus className="h-4 w-4" />
+                    </Button>
+                    <span className="w-8 text-center font-semibold text-primary">
+                      {quantity}
+                    </span>
+                    <Button
+                      variant="cart"
+                      size="icon"
+                      onClick={onAddToCart}
+                      className="h-8 w-8"
+                    >
+                      <Plus className="h-4 w-4" />
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    variant="cart"
+                    size="sm"
+                    onClick={onAddToCart}
+                    className="gap-1"
+                  >
+                    <Plus className="h-4 w-4" />
+                    Add to Cart
+                  </Button>
+                )}
+              </div>
             </div>
-          )}
+          </CardContent>
         </div>
-      </CardHeader>
-      
-      <CardContent className="pt-0">
-        <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary">
-            ${item.price.toFixed(2)}
+        
+        {item.image && (
+          <div className="shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-food-cream">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-full h-full object-cover"
+            />
           </div>
-          
-          <div className="flex items-center gap-2">
-            {isInCart ? (
-              <>
-                <Button
-                  variant="cart-secondary"
-                  size="icon"
-                  onClick={onRemoveFromCart}
-                  className="h-8 w-8"
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <span className="w-8 text-center font-semibold text-primary">
-                  {quantity}
-                </span>
-                <Button
-                  variant="cart"
-                  size="icon"
-                  onClick={onAddToCart}
-                  className="h-8 w-8"
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </>
-            ) : (
-              <Button
-                variant="cart"
-                size="sm"
-                onClick={onAddToCart}
-                className="gap-1"
-              >
-                <Plus className="h-4 w-4" />
-                Add to Cart
-              </Button>
-            )}
-          </div>
-        </div>
-      </CardContent>
+        )}
+      </div>
     </Card>
   );
 };
