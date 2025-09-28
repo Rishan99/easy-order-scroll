@@ -17,8 +17,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         cart: "bg-gradient-warm text-white hover:shadow-soft transition-smooth font-semibold",
         "cart-secondary": "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground transition-smooth",
-        category: "bg-food-cream text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-smooth rounded-full",
-        "category-active": "bg-primary text-primary-foreground shadow-soft rounded-full",
+        category: "bg-white/20 text-white border border-white/30 hover:bg-white hover:text-slate-900 transition-all duration-200 rounded-full px-6",
+        "category-active": "bg-white text-slate-900 border border-white shadow-lg scale-105 transition-all duration-200 rounded-full px-6",
       },
       size: {
         default: "h-10 px-4 py-2",
