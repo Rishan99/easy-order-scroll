@@ -57,11 +57,32 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "food-warm": {
+          DEFAULT: "hsl(var(--food-warm))",
+          foreground: "hsl(var(--food-warm-foreground))",
+        },
+        "food-light": "hsl(var(--food-light))",
+        "food-cream": "hsl(var(--food-cream))",
+        "cart-badge": "hsl(var(--cart-badge))",
+        "cart-glow": "hsl(var(--cart-glow))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-warm": "var(--gradient-warm)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "card": "var(--shadow-card)",
+        "cart": "var(--shadow-cart)",
+      },
+      transitionTimingFunction: {
+        "smooth": "var(--transition-smooth)",
+        "bounce": "var(--transition-bounce)",
       },
       keyframes: {
         "accordion-down": {
