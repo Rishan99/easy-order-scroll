@@ -13,16 +13,16 @@ export const CategoryNavigation = ({
   onCategoryClick,
 }: CategoryNavigationProps) => {
   return (
-    <div className="sticky top-16 z-40 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/90 border-b border-slate-700 shadow-lg" id="category-nav">
+    <div className="sticky top-16 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border shadow-soft" id="category-nav">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex gap-3 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {categories.map((category) => (
             <Button
               key={category.id}
               variant={activeCategory === category.id ? "category-active" : "category"}
               size="sm"
               onClick={() => onCategoryClick(category.id)}
-              className="shrink-0 transition-all duration-200 transform hover:scale-105"
+              className="shrink-0 transition-bounce"
             >
               {category.name}
             </Button>

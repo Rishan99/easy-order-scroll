@@ -1,18 +1,9 @@
-import { Phone } from "lucide-react";
-
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-8">
-      <div className="container mx-auto px-4 text-center">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <Phone className="h-5 w-5" />
-          <span className="text-lg font-semibold">9802344244</span>
-        </div>
-        <div className="text-lg font-medium mb-2">
-          inQR.com.np
-        </div>
-        <div className="text-sm text-gray-400">
-          Powered By: Biz Ad Cart Pvt Ltd.
+    <footer className="sticky bottom-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t border-border shadow-soft">
+      <div className="container mx-auto px-4 py-4">
+        <div className="text-center text-sm text-muted-foreground">
+          <p>© 2024 FoodieMenu. Delicious food at your fingertips.</p>
         </div>
       </div>
     </footer>
