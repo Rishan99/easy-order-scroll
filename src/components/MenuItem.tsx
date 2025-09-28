@@ -21,7 +21,17 @@ export const MenuItem = ({ item, quantity, onAddToCart, onRemoveFromCart }: Menu
       }`}
     >
       <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start gap-4">
+          {item.image && (
+            <div className="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-food-cream">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-2">
               <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-smooth">
@@ -33,20 +43,12 @@ export const MenuItem = ({ item, quantity, onAddToCart, onRemoveFromCart }: Menu
                 </Badge>
               )}
             </div>
-            <CardDescription className="text-sm text-muted-foreground line-clamp-2">
-              {item.description}
-            </CardDescription>
+            {item.description && (
+              <CardDescription className="text-sm text-muted-foreground line-clamp-2">
+                {item.description}
+              </CardDescription>
+            )}
           </div>
-          
-          {item.image && (
-            <div className="shrink-0 w-16 h-16 rounded-lg overflow-hidden bg-food-cream">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          )}
         </div>
       </CardHeader>
       

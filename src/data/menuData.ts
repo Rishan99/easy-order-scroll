@@ -29,6 +29,13 @@ export const menuData: MenuCategory[] = [
         image: "/placeholder.svg",
         category: "appetizers",
       },
+      {
+        id: "app4",
+        name: "Garlic Bread",
+        price: 5.99,
+        image: "/placeholder.svg",
+        category: "appetizers",
+      },
     ],
   },
   {
@@ -56,6 +63,13 @@ export const menuData: MenuCategory[] = [
         name: "Veggie Burger",
         description: "Plant-based patty with avocado, sprouts, and herb aioli",
         price: 14.99,
+        image: "/placeholder.svg",
+        category: "burgers",
+      },
+      {
+        id: "burger4",
+        name: "Double Deluxe",
+        price: 19.99,
         image: "/placeholder.svg",
         category: "burgers",
       },

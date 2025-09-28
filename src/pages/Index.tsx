@@ -63,6 +63,16 @@ const Index = () => {
         onCartClick={() => setIsCartOpen(true)}
       />
       
+      {/* Hero Image */}
+      <div className="relative h-48 bg-gradient-warm overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-white text-center">
+            Our Delicious Menu
+          </h1>
+        </div>
+      </div>
+      
       <CategoryNavigation
         categories={menuData}
         activeCategory={activeCategory}
@@ -70,15 +80,6 @@ const Index = () => {
       />
       
       <main className="container mx-auto px-4 py-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
-            Our Delicious Menu
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our carefully crafted dishes made with the finest ingredients. 
-            Each meal is prepared fresh to order just for you.
-          </p>
-        </div>
         
         {menuData.map((category) => (
           <MenuSection
